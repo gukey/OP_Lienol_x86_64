@@ -114,9 +114,3 @@ jobs:
       with:
         name: OpenWrt_firmware
         path: ./artifact/
-
-    - name: Upload Combined Image
-      uses: actions/upload-artifact@v1
-      with:
-        name: openwrt-x86-64-combined-squashfs.img
-        path: ./artifact/x86/64/openwrt-x86-64-combined-squashfs.img.gz
