@@ -1,7 +1,12 @@
-# OpenWrt-AutoBuild
+写在前面
 
-[OpenWrt-Actions-Lienol](https://github.com/kang-mk/OpenWrt-Actions-Lienol/actions)
+本项目基于 P3TERX 的 Actions-OpenWrt 项目:
 
-使用GitHub Actions构建OpenWrt固件  
-源码和脚本来自  
-[Lean](https://github.com/coolsnowwolf/lede)  丨  [ Lienol](https://github.com/Lienol/openwrt-actions )  丨  [P3TERX](https://github.com/P3TERX/Actions-OpenWrt)  丨  [esirplayground](https://github.com/esirplayground/AutoBuild-OpenWrt)  
+https://github.com/P3TERX/Actions-OpenWrt
+
+本项目的源码和脚本来自:
+
+[Lean](https://github.com/coolsnowwolf/lede)
+[Lienol](https://github.com/Lienol/openwrt-actions )
+[ctcgfw_openwrt](https://github.com/project-openwrt/The-Compiled-OpenWrt-Firmwares)
+[esirplayground](https://github.com/esirplayground/AutoBuild-OpenWrt) 
