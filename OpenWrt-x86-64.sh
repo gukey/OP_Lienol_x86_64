@@ -8,7 +8,7 @@
 #=================================================
 
 # 定制默认IP
-sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # 添加第三方软件包
 git clone https://github.com/KFERMercer/luci-app-serverchan package/luci-app-serverchan
@@ -20,10 +20,10 @@ git clone https://github.com/Aslin-Ameng/luci-theme-Light.git package/luci-theme
 git clone https://github.com/Flowers-in-thorns/luci-app-vssr-coexist.git package/luci-app-vssr-coexist
 
 # uci-app-dockerman && diskman
-git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
-git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
-git clone https://github.com/lisaac/luci-app-diskman package/luci-app-diskman
-mkdir -p package/parted && cp -i package/luci-app-diskman/Parted.Makefile package/parted/Makefile
+#git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
+#git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
+#git clone https://github.com/lisaac/luci-app-diskman package/luci-app-diskman
+#mkdir -p package/parted && cp -i package/luci-app-diskman/Parted.Makefile package/parted/Makefile
 
 #创建自定义配置文件 - OpenWrt-x86-64
 
@@ -112,10 +112,10 @@ CONFIG_PACKAGE_kmod-usb3=y
 EOF
 
 # 第三方插件选择:
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
-CONFIG_PACKAGE_luci-app-smartinfo=y #磁盘健康监控
-EOF
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
+#CONFIG_PACKAGE_luci-app-smartinfo=y #磁盘健康监控
+#EOF
 
 # Passwall插件:
 cat >> .config <<EOF
@@ -150,68 +150,68 @@ EOF
 # 常用LuCI插件(禁用):
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-smartdns=y #smartdnsDNS服务
-CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
-CONFIG_PACKAGE_luci-app-pppoe-relay=y #PPPoE穿透
-CONFIG_PACKAGE_luci-app-pppoe-server=y #PPPoE服务器
-CONFIG_PACKAGE_luci-app-trojan-server=yt #Trojan服务器
-CONFIG_PACKAGE_luci-app-v2ray-server=y #V2ray服务器
-CONFIG_PACKAGE_luci-app-pptp-vpnserver-manyusers=y #PPTP VPN 服务器
-CONFIG_PACKAGE_luci-app-hd-idle=y #磁盘休眠
+#CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
+#CONFIG_PACKAGE_luci-app-pppoe-relay=y #PPPoE穿透
+#CONFIG_PACKAGE_luci-app-pppoe-server=y #PPPoE服务器
+#CONFIG_PACKAGE_luci-app-trojan-server=yt #Trojan服务器
+#CONFIG_PACKAGE_luci-app-v2ray-server=y #V2ray服务器
+#CONFIG_PACKAGE_luci-app-pptp-vpnserver-manyusers=y #PPTP VPN 服务器
+#CONFIG_PACKAGE_luci-app-hd-idle=y #磁盘休眠
 EOF
 
 # 常用LuCI插件(启用):
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
-CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
-CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
-CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
+#CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
+#CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
+#CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
+#CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
 CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
-CONFIG_PACKAGE_luci-app-unblockmusic=y #解锁网易云灰色歌曲
+#CONFIG_PACKAGE_luci-app-unblockmusic=y #解锁网易云灰色歌曲
 CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
 CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用UPnP(端口自动转发)
-CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
-CONFIG_DEFAULT_luci-app-vlmcsd=y #KMS激活服务器
+#CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
+#CONFIG_DEFAULT_luci-app-vlmcsd=y #KMS激活服务器
 CONFIG_PACKAGE_luci-app-arpbind=yes #IP/MAC绑定
 CONFIG_PACKAGE_luci-app-sqm=y #SQM智能队列管理
 CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
 CONFIG_PACKAGE_luci-app-wol=y #网络唤醒
 CONFIG_PACKAGE_luci-app-control-mia=y #时间控制
-CONFIG_PACKAGE_luci-app-control-timewol=y #定时唤醒
-CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
-CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
+#CONFIG_PACKAGE_luci-app-control-timewol=y #定时唤醒
+#CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
+#CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
 CONFIG_PACKAGE_luci-app-flowoffload=y #Turbo ACC 网络加速
 CONFIG_PACKAGE_luci-app-vssr-coexist=y #兼容魔改和lean原版
-CONFIG_PACKAGE_luci-app-netdata=y
+#CONFIG_PACKAGE_luci-app-netdata=y
 CONFIG_PACKAGE_luci-app-mwan3helper=y #分流
-CONFIG_PACKAGE_luci-app-zerotier=y #内网穿透
-CONFIG_PACKAGE_luci-app-acme=y
-CONFIG_PACKAGE_luci-app-docker=y
-CONFIG_PACKAGE_luci-app-dockerman=y
-CONFIG_PACKAGE_luci-app-diskman=y
-CONFIG_PACKAGE_luci-app-aria2=y
+#CONFIG_PACKAGE_luci-app-zerotier=y #内网穿透
+#CONFIG_PACKAGE_luci-app-acme=y
+#CONFIG_PACKAGE_luci-app-docker=y
+#CONFIG_PACKAGE_luci-app-dockerman=y
+#CONFIG_PACKAGE_luci-app-diskman=y
+#CONFIG_PACKAGE_luci-app-aria2=y
 CONFIG_LUCI_LANG_zh-tw=y
 CONFIG_LUCI_LANG_en=y
 EOF
 
 # 网络共享:
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-fileassistant=y #文件助手
-CONFIG_PACKAGE_luci-app-vsftpd=y #FTP 服务器
-CONFIG_PACKAGE_luci-app-samba=y #网络共享
-CONFIG_PACKAGE_autosamba=y #网络共享
-CONFIG_PACKAGE_samba36-server=y #网络共享
-EOF
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_luci-app-fileassistant=y #文件助手
+#CONFIG_PACKAGE_luci-app-vsftpd=y #FTP 服务器
+#CONFIG_PACKAGE_luci-app-samba=y #网络共享
+#CONFIG_PACKAGE_autosamba=y #网络共享
+#CONFIG_PACKAGE_samba36-server=y #网络共享
+#EOF
 
 # LuCI主题:
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-theme-darkmatter=y
+#CONFIG_PACKAGE_luci-theme-darkmatter=y
 CONFIG_PACKAGE_luci-theme-bootstrap-mod=y
-CONFIG_PACKAGE_luci-theme-netgear-mc=y
+#CONFIG_PACKAGE_luci-theme-netgear-mc=y
 CONFIG_PACKAGE_luci-theme-argon-mod=y
-CONFIG_PACKAGE_luci-theme-opentomcat=y
+#CONFIG_PACKAGE_luci-theme-opentomcat=y
 CONFIG_PACKAGE_luci-theme-leo=y
-CONFIG_PACKAGE_luci-theme-Night=y
-CONFIG_PACKAGE_luci-theme-Light=y
+#CONFIG_PACKAGE_luci-theme-Night=y
+#CONFIG_PACKAGE_luci-theme-Light=y
 EOF
 
 # 常用软件包:
@@ -220,6 +220,8 @@ CONFIG_PACKAGE_curl=y
 CONFIG_PACKAGE_htop=y
 CONFIG_PACKAGE_nano=y
 CONFIG_PACKAGE_screen=y
+CONFIG_PACKAGE_smartsnmpd=y
+CONFIG_PACKAGE_snmpd=y
 CONFIG_PACKAGE_tree=y
 CONFIG_PACKAGE_vim-fuller=y
 CONFIG_PACKAGE_wget=y
@@ -243,4 +245,3 @@ EOF
 sed -i 's/^[ \t]*//g' ./.config
 
 # 配置文件创建完成
-
