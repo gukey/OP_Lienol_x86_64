@@ -7,7 +7,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-# 定制默认IP
+# 定制默认IP,替换默认的192.168.1.1
 #sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # 添加第三方软件包
