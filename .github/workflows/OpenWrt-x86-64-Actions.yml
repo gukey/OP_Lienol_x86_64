@@ -58,7 +58,7 @@ jobs:
     - name: 克隆源代码
       env: 
         REPO_URL: https://github.com/Lienol/openwrt
-        REPO_BRANCH: my-19.07-full
+        REPO_BRANCH: dev-19.07
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: 更新源
@@ -99,13 +99,6 @@ jobs:
         cd openwrt
         make -j1 V=s
 
-    - name: 上传BIN目录
-      uses: actions/upload-artifact@master
-      if: always()
-      with:
-        name: OpenWrt_bin
-        path: openwrt/bin
-
     - name: 整理文件
       run: |
           rm -rf ./artifact/
@@ -118,3 +111,9 @@ jobs:
       with:
         name: OpenWrt_firmware
         path: ./artifact/
+
+    - name: Upload Combined Image
+      uses: actions/upload-artifact@v1
+      with:
+        name: openwrt-x86-64-combined-squashfs.img
+        path: ./artifact/x86/64/openwrt-x86-64-combined-squashfs.img.gz
