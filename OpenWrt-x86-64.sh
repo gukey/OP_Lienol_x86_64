@@ -151,12 +151,12 @@ EOF
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-smartdns=y #smartdnsDNS服务
 # CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
-# CONFIG_PACKAGE_luci-app-pppoe-relay=y #PPPoE穿透
-# CONFIG_PACKAGE_luci-app-pppoe-server=y #PPPoE服务器
-# CONFIG_PACKAGE_luci-app-trojan-server=yt #Trojan服务器
-# CONFIG_PACKAGE_luci-app-v2ray-server=y #V2ray服务器
-# CONFIG_PACKAGE_luci-app-pptp-vpnserver-manyusers=y #PPTP VPN 服务器
-# CONFIG_PACKAGE_luci-app-hd-idle=y #磁盘休眠
+# CONFIG_PACKAGE_luci-app-pppoe-relay is not set #PPPoE穿透
+# CONFIG_PACKAGE_luci-app-pppoe-server is not set #PPPoE服务器
+# CONFIG_PACKAGE_luci-app-trojan-server is not set #Trojan服务器
+# CONFIG_PACKAGE_luci-app-v2ray-server is not set #V2ray服务器
+# CONFIG_PACKAGE_luci-app-pptp-vpnserver-manyusers is not set #PPTP VPN 服务器
+# CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
 EOF
 
 # 常用LuCI插件(启用):
@@ -170,7 +170,7 @@ CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
 CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
 CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用UPnP(端口自动转发)
 # CONFIG_PACKAGE_luci-app-softethervpn is not set #SoftEtherVPN服务器
-# CONFIG_DEFAULT_luci-app-vlmcsd is not set #KMS激活服务器
+# CONFIG_PACKAGE_luci-app-vlmcsd is not set #KMS激活服务器
 CONFIG_PACKAGE_luci-app-arpbind=yes #IP/MAC绑定
 CONFIG_PACKAGE_luci-app-sqm=y #SQM智能队列管理
 CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
@@ -195,7 +195,7 @@ EOF
 
 # 网络共享:
 # cat >> .config <<EOF
-# CONFIG_PACKAGE_luci-app-fileassistant=y #文件助手
+# CONFIG_PACKAGE_luci-app-fileassistant is not set #文件助手
 # CONFIG_PACKAGE_luci-app-vsftpd=y #FTP 服务器
 # CONFIG_PACKAGE_luci-app-samba=y #网络共享
 # CONFIG_PACKAGE_autosamba=y #网络共享
@@ -233,10 +233,10 @@ CONFIG_PACKAGE_autocore=y
 EOF
 
 # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
-cat >> .config <<EOF
-CONFIG_TARGET_IMAGES_PAD=y
-CONFIG_VMDK_IMAGES=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_TARGET_IMAGES_PAD=y
+#CONFIG_VMDK_IMAGES=y
+#EOF
 
 # 
 # ========================固件定制部分结束========================
