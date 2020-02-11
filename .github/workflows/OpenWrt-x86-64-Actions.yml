@@ -25,6 +25,9 @@ on:
 #  push:
 #    branches: 
 #      - master
+  push:
+    branches: 
+    - master
 
 # config触发
 #  paths:
