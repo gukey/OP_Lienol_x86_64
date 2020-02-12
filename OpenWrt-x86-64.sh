@@ -23,13 +23,14 @@
 #CONFIG_GRUB_TITLE="OpenWrt AutoBuild"
 
 # 添加第三方软件包
-git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
+#git clone https://github.com/KFERMercer/luci-app-serverchan package/luci-app-serverchan
 git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
 git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
-git clone https://github.com/Leo-Jo-My/luci-theme-leo.git package/luci-theme-leo
+#git clone https://github.com/Leo-Jo-My/luci-theme-leo.git package/luci-theme-leo
 git clone https://github.com/Aslin-Ameng/luci-theme-Night.git package/luci-theme-Night
 git clone https://github.com/Aslin-Ameng/luci-theme-Light.git package/luci-theme-Light
-git clone https://github.com/Flowers-in-thorns/luci-app-vssr-coexist.git package/luci-app-vssr-coexist
+#git clone https://github.com/Flowers-in-thorns/luci-app-vssr-coexist.git package/luci-app-vssr-coexist
+git clone https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-docker package/luci-app-docker
 
 # uci-app-dockerman && diskman
 #git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
