@@ -192,6 +192,7 @@ CONFIG_PACKAGE_luci-app-control-mia=y #时间控制
 CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
 CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
 CONFIG_PACKAGE_luci-app-flowoffload=y #Turbo ACC 网络加速
+CONFIG_PACKAGE_luci-app-vssr-coexist=y #兼容魔改和lean原版
 EOF
 
 # 网络共享:
@@ -209,7 +210,7 @@ cat >> .config <<EOF
 CONFIG_PACKAGE_luci-theme-bootstrap-mod=y
 #CONFIG_PACKAGE_luci-theme-netgear-mc=y
 #CONFIG_PACKAGE_luci-theme-argon-dark-mod=y
-CONFIG_PACKAGE_luci-theme-argon-light-mod=y
+#CONFIG_PACKAGE_luci-theme-argon-light-mod=y
 EOF
 
 # 常用软件包:
