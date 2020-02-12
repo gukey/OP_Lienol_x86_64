@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #=================================================
 # Description: DIY script
@@ -84,10 +83,10 @@ CONFIG_TARGET_x86_64_Generic=y
 EOF
 
 # 设置固件大小:
-#cat >> .config <<EOF
-#CONFIG_TARGET_KERNEL_PARTSIZE=16
-#CONFIG_TARGET_ROOTFS_PARTSIZE=160
-#EOF
+cat >> .config <<EOF
+CONFIG_TARGET_KERNEL_PARTSIZE=16
+CONFIG_TARGET_ROOTFS_PARTSIZE=160
+EOF
 
 # 固件压缩:
 cat >> .config <<EOF
@@ -100,10 +99,10 @@ EOF
 # EOF
 
 # IPv6支持:
-# cat >> .config <<EOF
-# CONFIG_PACKAGE_ipv6helper=y
-# CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-# EOF
+cat >> .config <<EOF
+CONFIG_PACKAGE_ipv6helper=y
+CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+EOF
 
 # 多文件系统支持:
 cat >> .config <<EOF
@@ -125,10 +124,10 @@ CONFIG_PACKAGE_kmod-usb3=y
 EOF
 
 # 第三方插件选择:
-# cat >> .config <<EOF
-# CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 # CONFIG_PACKAGE_luci-app-smartinfo=y #磁盘健康监控
-# EOF
+EOF
 
 # Passwall插件:
 cat >> .config <<EOF
@@ -162,8 +161,8 @@ EOF
 
 # 常用LuCI插件(禁用):
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-smartdns=y #smartdnsDNS服务
-# CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
+# CONFIG_PACKAGE_luci-app-smartdns is not set #smartdnsDNS服务
+# CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardHome去广告服务
 # CONFIG_PACKAGE_luci-app-pppoe-relay is not set #PPPoE穿透
 # CONFIG_PACKAGE_luci-app-pppoe-server is not set #PPPoE服务器
 # CONFIG_PACKAGE_luci-app-trojan-server is not set #Trojan服务器
@@ -183,48 +182,34 @@ CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
 CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
 CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用UPnP(端口自动转发)
 # CONFIG_PACKAGE_luci-app-softethervpn is not set #SoftEtherVPN服务器
-# CONFIG_PACKAGE_luci-app-vlmcsd is not set #KMS激活服务器
+# CONFIG_DEFAULT_luci-app-vlmcsd is not set #KMS激活服务器
 CONFIG_PACKAGE_luci-app-arpbind=yes #IP/MAC绑定
 CONFIG_PACKAGE_luci-app-sqm=y #SQM智能队列管理
 CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
 CONFIG_PACKAGE_luci-app-wol=y #网络唤醒
 CONFIG_PACKAGE_luci-app-control-mia=y #时间控制
 # CONFIG_PACKAGE_luci-app-control-timewol is not set #定时唤醒
-# CONFIG_PACKAGE_luci-app-control-webrestriction is not set #访问限制
-# CONFIG_PACKAGE_luci-app-control-weburl is not set #网址过滤
+CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
+CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
 CONFIG_PACKAGE_luci-app-flowoffload=y #Turbo ACC 网络加速
-CONFIG_PACKAGE_luci-app-vssr-coexist=y #兼容魔改和lean原版
-# CONFIG_PACKAGE_luci-app-netdata=y
-CONFIG_PACKAGE_luci-app-mwan3helper=y #分流
-# CONFIG_PACKAGE_luci-app-zerotier is not set #内网穿透
-# CONFIG_PACKAGE_luci-app-acme is not set
-# CONFIG_PACKAGE_luci-app-docker is not set
-# CONFIG_PACKAGE_luci-app-dockerman is not set
-# CONFIG_PACKAGE_luci-app-diskman is not set
-# CONFIG_PACKAGE_luci-app-aria2 is not set
-CONFIG_LUCI_LANG_zh-tw=y
-CONFIG_LUCI_LANG_en=y
 EOF
 
 # 网络共享:
-# cat >> .config <<EOF
+cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-fileassistant is not set #文件助手
-# CONFIG_PACKAGE_luci-app-vsftpd=y #FTP 服务器
-# CONFIG_PACKAGE_luci-app-samba=y #网络共享
-# CONFIG_PACKAGE_autosamba=y #网络共享
-# CONFIG_PACKAGE_samba36-server=y #网络共享
-# EOF
+# CONFIG_PACKAGE_luci-app-vsftpd is not set #FTP 服务器
+# CONFIG_PACKAGE_luci-app-samba is not set #网络共享
+# CONFIG_PACKAGE_autosamba is not set #网络共享
+# CONFIG_PACKAGE_samba36-server is not set #网络共享
+EOF
 
 # LuCI主题:
 cat >> .config <<EOF
-# CONFIG_PACKAGE_luci-theme-darkmatter=y
+#CONFIG_PACKAGE_luci-theme-darkmatter=y
 CONFIG_PACKAGE_luci-theme-bootstrap-mod=y
-# CONFIG_PACKAGE_luci-theme-netgear-mc=y
-CONFIG_PACKAGE_luci-theme-argon-mod=y
-# CONFIG_PACKAGE_luci-theme-opentomcat=y
-# CONFIG_PACKAGE_luci-theme-leo=y
-# CONFIG_PACKAGE_luci-theme-Night=y
-# CONFIG_PACKAGE_luci-theme-Light=y
+#CONFIG_PACKAGE_luci-theme-netgear-mc=y
+#CONFIG_PACKAGE_luci-theme-argon-dark-mod=y
+CONFIG_PACKAGE_luci-theme-argon-light-mod=y
 EOF
 
 # 常用软件包:
@@ -232,11 +217,11 @@ cat >> .config <<EOF
 CONFIG_PACKAGE_curl=y
 CONFIG_PACKAGE_htop=y
 CONFIG_PACKAGE_nano=y
-CONFIG_PACKAGE_screen=y
 CONFIG_PACKAGE_smartsnmpd=y
 CONFIG_PACKAGE_snmpd=y
-CONFIG_PACKAGE_tree=y
-CONFIG_PACKAGE_vim-fuller=y
+# CONFIG_PACKAGE_screen=y
+# CONFIG_PACKAGE_tree=y
+# CONFIG_PACKAGE_vim-fuller=y
 CONFIG_PACKAGE_wget=y
 EOF
 
@@ -244,12 +229,6 @@ EOF
 cat >> .config <<EOF
 CONFIG_PACKAGE_autocore=y
 EOF
-
-# 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
-#cat >> .config <<EOF
-#CONFIG_TARGET_IMAGES_PAD=y
-#CONFIG_VMDK_IMAGES=y
-#EOF
 
 # 
 # ========================固件定制部分结束========================
