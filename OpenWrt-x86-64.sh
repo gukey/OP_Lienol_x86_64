@@ -23,14 +23,15 @@
 #CONFIG_GRUB_TITLE="OpenWrt AutoBuild"
 
 # 添加第三方软件包
-#git clone https://github.com/KFERMercer/luci-app-serverchan package/luci-app-serverchan
-git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
-git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
+# 添加第三方软件包
+#git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
+#git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
+#git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
 #git clone https://github.com/Leo-Jo-My/luci-theme-leo.git package/luci-theme-leo
-git clone https://github.com/Aslin-Ameng/luci-theme-Night.git package/luci-theme-Night
-git clone https://github.com/Aslin-Ameng/luci-theme-Light.git package/luci-theme-Light
-#git clone https://github.com/Flowers-in-thorns/luci-app-vssr-coexist.git package/luci-app-vssr-coexist
-git clone https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-docker package/luci-app-docker
+#git clone https://github.com/Aslin-Ameng/luci-theme-Night.git package/luci-theme-Night
+#git clone https://github.com/Aslin-Ameng/luci-theme-Light.git package/luci-theme-Light
+git clone https://github.com/Flowers-in-thorns/luci-app-vssr-coexist.git package/luci-app-vssr-coexist
+#git clone https://github.com/docker/docker-ce.git package/luci-app-docker
 
 # uci-app-dockerman && diskman
 #git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
@@ -124,20 +125,18 @@ CONFIG_PACKAGE_kmod-usb2-pci=y
 CONFIG_PACKAGE_kmod-usb3=y
 EOF
 
+# Virtualization
+cat >> .config <<EOF
+CONFIG_PACKAGE_kmod-irqbypass=y
+CONFIG_PACKAGE_kmod-kvm-intel=y
+CONFIG_PACKAGE_kmod-kvm-x86=y
+EOF
+
 # 第三方插件选择:
 #cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
-# CONFIG_PACKAGE_luci-app-smartinfo=y #磁盘健康监控
-EOF
-
-# ShadowsocksR插件:
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
-EOF
+#CONFIG_PACKAGE_luci-app-smartinfo=y #磁盘健康监控
+#EOF
 
 # Passwall插件:
 cat >> .config <<EOF
@@ -231,9 +230,9 @@ CONFIG_PACKAGE_htop=y
 CONFIG_PACKAGE_nano=y
 CONFIG_PACKAGE_smartsnmpd=y
 CONFIG_PACKAGE_snmpd=y
-# CONFIG_PACKAGE_screen=y
-# CONFIG_PACKAGE_tree=y
-# CONFIG_PACKAGE_vim-fuller=y
+CONFIG_PACKAGE_screen=y
+CONFIG_PACKAGE_tree=y
+CONFIG_PACKAGE_vim-fuller=y
 CONFIG_PACKAGE_wget=y
 EOF
 
